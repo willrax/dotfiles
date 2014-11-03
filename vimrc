@@ -7,7 +7,7 @@
 " ------------------------------------------------------------------------------
 " General Settings
 " ------------------------------------------------------------------------------
-command! W :w                                " Seriously, it"s not like :W is bound
+command! W :w                                " Seriously, it's not like :W is bound
                                              " to anything anyway.
 set nocompatible                             " Turn off vi compatibility.
 set undolevels=1000                          " Large undo levels.
@@ -119,7 +119,7 @@ let g:vroom_use_spring = 1
 " CtrlP
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
-let g:ctrlp_user_command = "ag %s -l --nocolor -g """
+let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
 
 " ------------------------------------------------------------------------------
 " YouCompleteMe
@@ -137,7 +137,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 " rails.vim
 " ------------------------------------------------------------------------------
 " Set ctags command so that tags are supported by YouCompleteMe
-let g:rails_ctags_arguments = ["--languages=-javascript", "--fields=+l", "--exclude=.git", "--exclude=log"]
+let g:rails_ctags_arguments = ['--languages=-javascript', '--fields=+l', '--exclude=.git', '--exclude=log']
 
 " ------------------------------------------------------------------------------
 " Search and Replace
