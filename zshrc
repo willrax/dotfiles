@@ -15,11 +15,6 @@ if [[ -s "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh" ]]; then
   source "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh"
 fi
 
-# Load chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby 2.1.4
-
 # Aliases
 alias a="tmux attach -t"
 alias g="git"
