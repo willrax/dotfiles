@@ -33,46 +33,33 @@ set tags+=tags                               " Enable tags.
 " ------------------------------------------------------------------------------
 " Vundle
 " ------------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin("~/.nvim/plugged")
 
-" Self manage vundle.
-Bundle "gmarik/vundle"
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'henrik/rename.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'mustache/vim-mode'
+Plug 'skalnik/vim-vroom'
+Plug 'tpope/vim-rails'
+Plug 'dyng/auto_mkdir'
+Plug 'kien/ctrlp.vim'
+Plug 'elzr/vim-json'
+Plug 'rking/ag.vim'
+Plug 'junegunn/limelight.vim'
 
-" Language / syntax support.
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rake"
-Bundle "mustache/vim-mode"
-Bundle "hail2u/vim-css3-syntax"
-Bundle "elzr/vim-json"
-
-Bundle "skalnik/vim-vroom"
-Bundle "kien/ctrlp.vim"
-Bundle "rking/ag.vim"
-Bundle "godlygeek/tabular"
-Bundle "tomtom/tcomment_vim"
-Bundle "henrik/rename.vim"
-Bundle "scrooloose/syntastic"
-Bundle "noprompt/vim-yardoc"
-Bundle "bling/vim-airline"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "ervandew/supertab"
-Bundle "dyng/auto_mkdir"
-
-" Themes
-Bundle "kien/rainbow_parentheses.vim"
-Bundle "chriskempson/base16-vim"
-
-call vundle#end()
+call plug#end()
 
 " ------------------------------------------------------------------------------
 " Binds
 " ------------------------------------------------------------------------------
-let mapleader = ","               " Use comma as leader.
+let mapleader = ","
 
 map <Left> <Nop>
 map <Right> <Nop>
@@ -85,16 +72,11 @@ nnoremap <leader>a :Ag<space>
 " Rename buffer
 nnoremap <Leader><Leader>r :Rename!<space>
 
-" Project Notes
-map <Leader>pn :sp ~/Dropbox/Notes.md<CR>
-
 " Fugitive Status
 map <Leader>s :Gstatus<CR>
 
 " Remap esc
 imap jj <ESC>
-imap jk <ESC>
-imap kj <ESC>
 
 " Use v to toggle visual mode.
 vno v <esc>
@@ -108,6 +90,17 @@ au FileType ruby nmap <Leader>R :wa<CR>:VroomRunNearestTest<CR>
 au FileType ruby imap <Leader>r <ESC>:wa<CR>:VroomRunTestFile<CR>
 au FileType ruby imap <Leader>R <ESC>:wa<CR>:VroomRunNearestTest<CR>
 
+" Goyo
+"
+map <Leader>go :Goyo<CR>
+
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+" airline
+"
+let g:airline_powerline_fonts = 1
+
 " ------------------------------------------------------------------------------
 " vroom
 " ------------------------------------------------------------------------------
@@ -120,24 +113,6 @@ let g:vroom_use_spring = 1
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-
-" ------------------------------------------------------------------------------
-" YouCompleteMe
-" ------------------------------------------------------------------------------
-" Use tags files.
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-" Use identifiers from syntax files.
-let g:ycm_seed_identifiers_with_syntax = 1
-
-" Use strings for completion too.
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-" ------------------------------------------------------------------------------
-" rails.vim
-" ------------------------------------------------------------------------------
-" Set ctags command so that tags are supported by YouCompleteMe
-let g:rails_ctags_arguments = ['--languages=-javascript', '--fields=+l', '--exclude=.git', '--exclude=log']
 
 " ------------------------------------------------------------------------------
 " Search and Replace
@@ -164,6 +139,8 @@ set list
 " ------------------------------------------------------------------------------
 " Presentation
 " ------------------------------------------------------------------------------
+let base16colorspace=256
+
 set shortmess=aIoO                " Show short messages, no intro.
 set ttyfast                       " Fast scrolling when on a decent connection.
 set nowrap                        " Wrap text.
@@ -182,8 +159,9 @@ highlight ColorColumn ctermbg=236 guibg=#262D51
 " ------------------------------------------------------------------------------
 " User Interface
 " ------------------------------------------------------------------------------
-let base16colorspace=256          " Access colors present in 256 colorspace
-colorscheme base16-tomorrow
+colo seoul256
+let g:seoul256_background = 234
+
 set background=dark
 
 if has("gui_running")
@@ -220,10 +198,7 @@ set fillchars+=stl:\ ,stlnc:\ " Space.
 " ------------------------------------------------------------------------------
 " Rainbow Parenthesis
 " ------------------------------------------------------------------------------
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * :RainbowParentheses!!
 
 au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2
 au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=121 textwidth=120
