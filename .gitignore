@@ -3,3 +3,4 @@ ssh/*
 lftp/bookmarks
 lftp/log
 gitconfig
+.DS_Store
