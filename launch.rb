@@ -11,4 +11,7 @@ Dir.chdir File.dirname(__FILE__) do
       FileUtils.ln_s(File.expand_path(File.join(File.dirname(__FILE__), file)), "#{ENV["HOME"]}/.#{file}", force: true)
     end
   end
+
+  %x[git clone --recursive https://github.com/willrax/prezto.git ~/.zprezto]
+  %x[curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim]
 end
