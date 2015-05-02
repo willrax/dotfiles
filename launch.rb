@@ -11,6 +11,4 @@ Dir.chdir File.dirname(__FILE__) do
       FileUtils.ln_s(File.expand_path(File.join(File.dirname(__FILE__), file)), "#{ENV["HOME"]}/.#{file}", force: true)
     end
   end
-
-  %x[git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle]
 end
