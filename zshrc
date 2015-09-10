@@ -27,8 +27,8 @@ alias be="bundle exec"
 alias m="mux"
 alias gt="gittower"
 
-alias v='nvim'
-alias vim='nvim'
+# alias v='nvim'
+# alias vim='nvim'
 
 alias nom="rm -rf node_modules && npm cache clean && npm install"
 alias bom="rm -rf bower_components && bower cache clean && bower install"

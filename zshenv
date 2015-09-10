@@ -10,6 +10,8 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
 export RUBYMOTION_ANDROID_NDK=~/android-rubymotion/ndk
 export RUBYMOTION_ANDROID_SDK=~/android-rubymotion/sdk
 

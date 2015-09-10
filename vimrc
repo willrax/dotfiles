@@ -33,26 +33,30 @@ set tags+=tags                               " Enable tags.
 " ------------------------------------------------------------------------------
 " Vundle
 " ------------------------------------------------------------------------------
-call plug#begin("~/.nvim/plugged")
+call plug#begin("~/.vim/plugged")
 
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'junegunn/seoul256.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'junegunn/limelight.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
+Plug 'lambdatoast/elm.vim'
+
+Plug 'kchmck/vim-coffee-script'
+
 Plug 'junegunn/goyo.vim'
-Plug 'mustache/vim-mode'
 Plug 'skalnik/vim-vroom'
 Plug 'tpope/vim-rails'
 Plug 'dyng/auto_mkdir'
+
 Plug 'kien/ctrlp.vim'
-Plug 'elzr/vim-json'
 Plug 'rking/ag.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
@@ -109,10 +113,11 @@ let g:vroom_use_dispatch = 0
 let g:vroom_use_spring = 1
 
 " ------------------------------------------------------------------------------
-" CtrlP
+" Ctrl-p
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
+let g:ctrlp_match_func = {"match" : "matcher#cmatch" }
 
 " ------------------------------------------------------------------------------
 " Search and Replace
@@ -159,10 +164,7 @@ highlight ColorColumn ctermbg=236 guibg=#262D51
 " ------------------------------------------------------------------------------
 " User Interface
 " ------------------------------------------------------------------------------
-colo seoul256
-let g:seoul256_background = 234
-
-set background=dark
+colo base16-default
 
 if has("gui_running")
     set guioptions-=m             " Disable menu bar.
@@ -198,8 +200,6 @@ set fillchars+=stl:\ ,stlnc:\ " Space.
 " ------------------------------------------------------------------------------
 " Rainbow Parenthesis
 " ------------------------------------------------------------------------------
-au VimEnter * :RainbowParentheses!!
-
 au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2
 au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=121 textwidth=120
 au FileType html,haml,scss setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -207,9 +207,6 @@ au FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab nolist
 au FileType javascript,js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 au BufNewFile,BufRead Vagrantfile,Berksfile set filetype=ruby
-
-" Don"t hide quotes in JSON.
-let g:vim_json_syntax_conceal = 0
 
 " When not in a Rails project, vim-rails doesn"t highlight
 " RSpec files. Do it manually.
