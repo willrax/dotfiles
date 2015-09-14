@@ -5,14 +5,16 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Source base16 256 colourspace script.
-if [[ -s "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh" ]]; then
-  source "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh"
+if [[ -s "$HOME/.colours/base16-shell/base16-eighties.dark.sh" ]]; then
+  source "$HOME/.colours/base16-shell/base16-eighties.dark.sh"
 fi
 
 # Aliases
