@@ -10,11 +10,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
-
-export RUBYMOTION_ANDROID_NDK=~/android-rubymotion/ndk
-export RUBYMOTION_ANDROID_SDK=~/android-rubymotion/sdk
-
 #
 # Browser
 #
@@ -27,8 +22,8 @@ fi
 # Editors
 #
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export PAGER="less"
 
 #
@@ -81,9 +76,6 @@ if [[ -d "$TMPDIR" ]]; then
     mkdir -p "$TMPPREFIX"
   fi
 fi
-
-# Load nvm
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 
 # Load direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi

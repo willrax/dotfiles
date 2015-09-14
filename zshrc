@@ -16,19 +16,11 @@ if [[ -s "$HOME/.colours/base16-shell/base16-tomorrow.dark.sh" ]]; then
 fi
 
 # Aliases
-alias a="tmux attach -t"
 alias g="git"
-alias v="vim"
-alias t="tmux"
-alias c="cd"
-alias z="zeus"
-alias s="spring"
-alias be="bundle exec"
 alias m="mux"
-alias gt="gittower"
-
-# alias v='nvim'
-# alias vim='nvim'
+alias t="tmux"
+alias be="bundle exec"
+alias a="tmux attach -t"
 
 alias nom="rm -rf node_modules && npm cache clean && npm install"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
