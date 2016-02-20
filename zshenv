@@ -77,5 +77,7 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
+export PURE_GIT_PULL=0
+
 # Load direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi

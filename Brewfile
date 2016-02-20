@@ -1,8 +1,10 @@
 tap "caskroom/cask"
+tap "caskroom/versions"
 
-brew "vim"
-brew "postgresql"
 brew "axel"
+brew "vim"
+brew "elixir"
+brew "postgresql"
 brew "git"
 brew "youtube-dl"
 brew "node"
