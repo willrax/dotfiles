@@ -43,9 +43,8 @@ Plug 'henrik/rename.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'skalnik/vim-vroom'
 Plug 'dyng/auto_mkdir'
-Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'junegunn/fzf'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -70,6 +69,8 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+map <leader>t :FZF<CR>
 
 " Ag
 nnoremap <leader>a :Ag<space>
@@ -110,13 +111,6 @@ let g:airline_theme = 'base16_eighties'
 let g:vroom_map_keys = 0
 let g:vroom_use_dispatch = 0
 let g:vroom_use_spring = 1
-
-" ------------------------------------------------------------------------------
-" Ctrl-p
-" ------------------------------------------------------------------------------
-let g:ctrlp_map = "<Leader>t"
-let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-let g:ctrlp_match_func = {"match" : "matcher#cmatch" }
 
 " ------------------------------------------------------------------------------
 " Search and Replace
