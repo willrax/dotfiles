@@ -35,28 +35,29 @@ set tags+=tags                               " Enable tags.
 " ------------------------------------------------------------------------------
 call plug#begin("~/.vim/plugged")
 
-Plug 'chriskempson/base16-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'junegunn/limelight.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
-Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
-Plug 'lambdatoast/elm.vim'
-
-Plug 'kchmck/vim-coffee-script'
-
 Plug 'junegunn/goyo.vim'
 Plug 'skalnik/vim-vroom'
-Plug 'tpope/vim-rails'
 Plug 'dyng/auto_mkdir'
-
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Languages
+Plug 'kchmck/vim-coffee-script'
+Plug 'elixir-lang/vim-elixir'
+Plug 'junegunn/vim-emoji'
+Plug 'tpope/vim-rails'
+
+" Colours
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -98,12 +99,10 @@ au FileType ruby imap <Leader>R <ESC>:wa<CR>:VroomRunNearestTest<CR>
 "
 map <Leader>go :Goyo<CR>
 
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-
 " airline
 "
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_eighties'
 
 " ------------------------------------------------------------------------------
 " vroom
