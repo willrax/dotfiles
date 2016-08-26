@@ -81,3 +81,6 @@ export PURE_GIT_PULL=0
 
 # Load direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
+
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
