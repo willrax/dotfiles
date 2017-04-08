@@ -31,7 +31,7 @@ set spelllang=en_au                          " Set spell check language.
 set tags+=tags                               " Enable tags.
 
 " ------------------------------------------------------------------------------
-" Vundle
+" Plug
 " ------------------------------------------------------------------------------
 call plug#begin("~/.vim/plugged")
 
@@ -40,21 +40,23 @@ Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'skalnik/vim-vroom'
 Plug 'dyng/auto_mkdir'
-Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'kien/ctrlp.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
 
 " Languages
-Plug 'kchmck/vim-coffee-script'
 Plug 'elixir-lang/vim-elixir'
 Plug 'junegunn/vim-emoji'
 Plug 'tpope/vim-rails'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'dustinfarris/vim-htmlbars-inline-syntax'
+Plug 'leafgarland/typescript-vim'
 
 " Colours
 Plug 'chriskempson/base16-vim'
@@ -95,10 +97,6 @@ au FileType ruby nmap <Leader>R :wa<CR>:VroomRunNearestTest<CR>
 au FileType ruby imap <Leader>r <ESC>:wa<CR>:VroomRunTestFile<CR>
 au FileType ruby imap <Leader>R <ESC>:wa<CR>:VroomRunNearestTest<CR>
 
-" Goyo
-"
-map <Leader>go :Goyo<CR>
-
 " airline
 "
 let g:airline_powerline_fonts = 1
@@ -116,7 +114,6 @@ let g:vroom_use_spring = 1
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-let g:ctrlp_match_func = {"match" : "matcher#cmatch" }
 
 " ------------------------------------------------------------------------------
 " Search and Replace
@@ -164,7 +161,6 @@ highlight ColorColumn ctermbg=236 guibg=#262D51
 " ------------------------------------------------------------------------------
 " User Interface
 " ------------------------------------------------------------------------------
-colo base16-default
 
 if has("gui_running")
     set guioptions-=m             " Disable menu bar.
