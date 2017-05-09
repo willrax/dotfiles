@@ -26,6 +26,8 @@ alias t="tmux"
 alias be="bundle exec"
 alias a="tmux attach -t"
 
+alias vim="nvim"
+
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yombom="yom && bom"

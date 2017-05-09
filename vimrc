@@ -44,6 +44,7 @@ Plug 'skalnik/vim-vroom'
 Plug 'dyng/auto_mkdir'
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -52,7 +53,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Languages
 Plug 'elixir-lang/vim-elixir'
-Plug 'junegunn/vim-emoji'
 Plug 'tpope/vim-rails'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'dustinfarris/vim-htmlbars-inline-syntax'
@@ -114,6 +114,7 @@ let g:vroom_use_spring = 1
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 
 " ------------------------------------------------------------------------------
 " Search and Replace
