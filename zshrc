@@ -33,3 +33,6 @@ alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yombom="yom && bom"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
