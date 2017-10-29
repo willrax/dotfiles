@@ -13,8 +13,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Source base16 256 colourspace script.
-if [[ -s "$HOME/.config/base16-shell/scripts/base16-eighties.dark.sh" ]]; then
-  source "$HOME/.config/base16-shell/scripts/base16-eighties.dark.sh"
+if [[ -s "$HOME/.config/base16-shell/scripts/base16-eighties.sh" ]]; then
+  source "$HOME/.config/base16-shell/scripts/base16-eighties.sh"
 fi
 
 # Aliases
