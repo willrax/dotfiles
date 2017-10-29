@@ -50,6 +50,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'posva/vim-vue'
 
 " Languages
 Plug 'elixir-lang/vim-elixir'
