@@ -233,3 +233,10 @@ function! StripTrailingWhitespace()
     endif
 endfunction
 nnoremap <leader>W :call StripTrailingWhitespace()<CR>
+
+let g:ale_linters = {
+      \  'javascript': ['eslint'],
+      \  'ruby': ['ruby'],
+      \  'scss': ['prettier', 'sass-lint', 'scss-lint', 'stylelint'],
+      \  'html': ['HTMLHint', 'proselint', 'tidy', 'write-good'],
+      \}
