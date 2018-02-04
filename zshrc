@@ -21,18 +21,13 @@ fi
 alias g="git"
 alias gclean="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 alias m="tmuxinator"
-alias mux="tmuxinator"
 alias t="tmux"
 alias be="bundle exec"
 alias a="tmux attach -t"
 
 alias vim="nvim"
 
-alias yom="rm -rf node_modules && yarn cache clean && yarn"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
-alias yombom="yom && bom"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
