@@ -50,6 +50,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'posva/vim-vue'
+Plug 'ryanoasis/vim-devicons'
 
 " Languages
 Plug 'elixir-lang/vim-elixir'
@@ -114,6 +115,7 @@ let g:vroom_use_spring = 1
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
+let g:webdevicons_enable_ctrlp = 1
 
 " ------------------------------------------------------------------------------
 " Search and Replace
