@@ -48,16 +48,17 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'airblade/vim-gitgutter'
-Plug 'posva/vim-vue'
+
 Plug 'ryanoasis/vim-devicons'
 
 " Languages
-Plug 'elixir-lang/vim-elixir'
-Plug 'tpope/vim-rails'
-Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'dustinfarris/vim-htmlbars-inline-syntax'
+Plug 'elixir-lang/vim-elixir'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
+Plug 'tpope/vim-rails'
+
 
 " Colours
 Plug 'chriskempson/base16-vim'
