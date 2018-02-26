@@ -12,6 +12,5 @@ Dir.chdir File.dirname(__FILE__) do
     end
   end
 
-  %x[git clone --recursive https://github.com/willrax/prezto.git ~/.zprezto]
   %x[curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim]
 end
