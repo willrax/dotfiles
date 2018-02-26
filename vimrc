@@ -37,13 +37,13 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
 Plug 'skalnik/vim-vroom'
 Plug 'dyng/auto_mkdir'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -58,7 +58,8 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-rails'
-
+Plug 'jparise/vim-graphql'
+Plug 'mxw/vim-jsx'
 
 " Colours
 Plug 'chriskempson/base16-vim'
@@ -185,6 +186,20 @@ if has("mouse")
     set mousemodel=popup_setpos   " Show a pop-up for right-click.
     set mousehide                 " Hide mouse while typing.
 endif
+
+" ------------------------------------------------------------------------------
+" Ale
+" ------------------------------------------------------------------------------
+let g:ale_sign_column_always = 1
+
+" ------------------------------------------------------------------------------
+" Language Client
+" ------------------------------------------------------------------------------
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " ------------------------------------------------------------------------------
 " Status Line
