@@ -24,5 +24,4 @@ function fish_prompt
   echo (dirs)
   set_color purple
   echo '❯ '
-  set_color normal
 end
