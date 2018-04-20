@@ -55,10 +55,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'dustinfarris/vim-htmlbars-inline-syntax'
 Plug 'elixir-lang/vim-elixir'
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-rails'
 Plug 'jparise/vim-graphql'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Colours
