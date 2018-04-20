@@ -145,7 +145,7 @@ set list
 " Presentation
 " ------------------------------------------------------------------------------
 let base16colorspace=256
-colorscheme base16-eighties
+colorscheme base16-material
 
 set shortmess=aIoO                " Show short messages, no intro.
 set ttyfast                       " Fast scrolling when on a decent connection.
