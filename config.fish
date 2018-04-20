@@ -17,6 +17,8 @@ alias be="bundle exec"
 alias a="tmux attach -t"
 alias vim="nvim"
 
+eval (direnv hook fish)
+
 function fish_prompt
   echo
   set_color blue
