@@ -31,40 +31,30 @@ set spelllang=en_au                          " Set spell check language.
 set tags+=tags                               " Enable tags.
 
 " ------------------------------------------------------------------------------
-" Plug
+" Minpac
 " ------------------------------------------------------------------------------
-call plug#begin("~/.vim/plugged")
 
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
-Plug 'godlygeek/tabular'
-Plug 'henrik/rename.vim'
-Plug 'skalnik/vim-vroom'
-Plug 'dyng/auto_mkdir'
-Plug 'rking/ag.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+packadd minpac
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" Languages
-Plug 'dustinfarris/vim-htmlbars-inline-syntax'
-Plug 'elixir-lang/vim-elixir'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'posva/vim-vue'
-Plug 'tpope/vim-rails'
-Plug 'jparise/vim-graphql'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Colours
-Plug 'chriskempson/base16-vim'
-
-call plug#end()
+call minpac#add('tomtom/tcomment_vim')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('godlygeek/tabular')
+call minpac#add('henrik/rename.vim')
+call minpac#add('skalnik/vim-vroom')
+call minpac#add('dyng/auto_mkdir')
+call minpac#add('rking/ag.vim')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('w0rp/ale')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('prettier/vim-prettier', { 'do': system('yarn install') })
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('mxw/vim-jsx')
+call minpac#add('chriskempson/base16-vim')
 
 " ------------------------------------------------------------------------------
 " Binds
@@ -93,20 +83,9 @@ vno v <esc>
 
 nmap <Leader>n :nohlsearch<CR>
 
-" Save and run tests in Ruby
-
-au FileType ruby nmap <Leader>r :wa<CR>:VroomRunTestFile<CR>
-au FileType ruby nmap <Leader>R :wa<CR>:VroomRunNearestTest<CR>
-au FileType ruby imap <Leader>r <ESC>:wa<CR>:VroomRunTestFile<CR>
-au FileType ruby imap <Leader>R <ESC>:wa<CR>:VroomRunNearestTest<CR>
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
 " airline
 "
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_eighties'
 
 " ------------------------------------------------------------------------------
@@ -217,26 +196,10 @@ set fillchars+=stl:\ ,stlnc:\ " Space.
 " ------------------------------------------------------------------------------
 " Rainbow Parenthesis
 " ------------------------------------------------------------------------------
-au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2
 au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=121 textwidth=120
 au FileType html,haml,scss setlocal tabstop=2 softtabstop=2 shiftwidth=2
 au FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab nolist
 au FileType javascript,js setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-au BufNewFile,BufRead Vagrantfile,Berksfile set filetype=ruby
-
-" When not in a Rails project, vim-rails doesn"t highlight
-" RSpec files. Do it manually.
-if !exists(":Rails!")
-  function! SyntaxForRspec()
-    syn keyword rubyRspec describe context it its specify shared_context shared_examples_for it_should_behave_like it_behaves_like before after around subject fixtures controller_name helper_name scenario feature background
-    syn match rubyRspec "\<let\>!\="
-    syn keyword rubyRspec violated pending expect double mock mock_model stub_model
-    syn match rubyRspec "\.\@<!\<stub\>!\@!"
-    highlight def link rubyRspec Function
-  endfunction
-  au BufNewFile,BufRead *_spec.rb call SyntaxForRspec()
-endif
 
 " ------------------------------------------------------------------------------
 " Functions
