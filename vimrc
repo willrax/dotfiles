@@ -43,13 +43,10 @@ Plug 'skalnik/vim-vroom'
 Plug 'dyng/auto_mkdir'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-
-Plug 'ryanoasis/vim-devicons'
 
 " Languages
 Plug 'dustinfarris/vim-htmlbars-inline-syntax'
@@ -61,6 +58,8 @@ Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Colours
 Plug 'chriskempson/base16-vim'
@@ -101,6 +100,10 @@ au FileType ruby nmap <Leader>R :wa<CR>:VroomRunNearestTest<CR>
 au FileType ruby imap <Leader>r <ESC>:wa<CR>:VroomRunTestFile<CR>
 au FileType ruby imap <Leader>R <ESC>:wa<CR>:VroomRunNearestTest<CR>
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 " airline
 "
 let g:airline_powerline_fonts = 1
@@ -117,8 +120,7 @@ let g:vroom_use_spring = 1
 " Ctrl-p
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
-let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-let g:webdevicons_enable_ctrlp = 1
+let g:ctrlp_user_command = 'rg --hidden -l ""'
 
 " ------------------------------------------------------------------------------
 " Search and Replace
@@ -257,3 +259,5 @@ let g:ale_linters = {
       \  'scss': ['prettier', 'sass-lint', 'scss-lint', 'stylelint'],
       \  'html': ['HTMLHint', 'proselint', 'tidy', 'write-good'],
       \}
+
+autocmd BufNewFile,BufRead *.ts set syntax=javascript

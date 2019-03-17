@@ -5,3 +5,6 @@ Thumbs.db
 *.swo
 .envrc
 .env
+
+node_modules
+.prettierrc
