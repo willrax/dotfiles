@@ -26,3 +26,5 @@ alias a="tmux attach -t"
 . $HOME/.asdf/completions/asdf.bash
 
 eval "$(direnv hook zsh)"
+export PATH="/usr/local/sbin:$PATH"
+export NODEJS_CHECK_SIGNATURES="no"
