@@ -55,6 +55,7 @@ call minpac#add('prettier/vim-prettier', { 'do': system('yarn install') })
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('chriskempson/base16-vim')
+call minpac#add('tpope/vim-obsession')
 
 " ------------------------------------------------------------------------------
 " Binds
@@ -99,7 +100,7 @@ let g:vroom_use_spring = 1
 " Ctrl-p
 " ------------------------------------------------------------------------------
 let g:ctrlp_map = "<Leader>t"
-let g:ctrlp_user_command = 'rg --hidden -l ""'
+let g:ctrlp_user_command = 'rg -l ""'
 
 " ------------------------------------------------------------------------------
 " Search and Replace
