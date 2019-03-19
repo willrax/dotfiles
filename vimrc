@@ -194,13 +194,10 @@ set laststatus=2
 " Disable status line fill chars.
 set fillchars+=stl:\ ,stlnc:\ " Space.
 
-" ------------------------------------------------------------------------------
-" Rainbow Parenthesis
-" ------------------------------------------------------------------------------
 au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=121 textwidth=120
 au FileType html,haml,scss setlocal tabstop=2 softtabstop=2 shiftwidth=2
 au FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab nolist
-au FileType javascript,js setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType javascript,js setlocal tabstop=2 shiftwidth=2 softtabstop=2 colorcolumn=100
 
 " ------------------------------------------------------------------------------
 " Functions
@@ -225,3 +222,6 @@ let g:ale_linters = {
       \}
 
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
+
+" Load any local project specific configurations.
+silent! so .vimlocal
