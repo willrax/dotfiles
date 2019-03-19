@@ -31,31 +31,30 @@ set spelllang=en_au                          " Set spell check language.
 set tags+=tags                               " Enable tags.
 
 " ------------------------------------------------------------------------------
-" Minpac
+" Vim Plug
 " ------------------------------------------------------------------------------
 
-packadd minpac
+call plug#begin('~/.vim/plugged')
 
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'henrik/rename.vim'
+Plug 'skalnik/vim-vroom'
+Plug 'dyng/auto_mkdir'
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'jparise/vim-graphql'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'willrax/vim-colors'
+Plug 'tpope/vim-obsession'
 
-call minpac#add('tomtom/tcomment_vim')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('godlygeek/tabular')
-call minpac#add('henrik/rename.vim')
-call minpac#add('skalnik/vim-vroom')
-call minpac#add('dyng/auto_mkdir')
-call minpac#add('rking/ag.vim')
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('w0rp/ale')
-call minpac#add('jparise/vim-graphql')
-call minpac#add('prettier/vim-prettier', { 'do': system('yarn install') })
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('chriskempson/base16-vim')
-call minpac#add('tpope/vim-obsession')
+call plug#end()
 
 " ------------------------------------------------------------------------------
 " Binds
