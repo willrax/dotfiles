@@ -148,21 +148,6 @@ highlight ColorColumn ctermbg=236 guibg=#262D51
 " User Interface
 " ------------------------------------------------------------------------------
 
-if has("gui_running")
-    set guioptions-=m             " Disable menu bar.
-    set guioptions-=T             " Disable the tool bar bar.
-    set guioptions-=l             " Disable left scrollbar.
-    set guioptions-=L             " Disable left scrollbar when split.
-    set guioptions-=r             " Diable right scrollbar.
-    set guioptions-=a             " Do not auto copy selection to clipboard.
-
-    " If MacVim do some specific things.
-    set guifont=Monaco:h16
-    set lines=52                      " Window size.
-    set columns=165
-    set vb                            " Disable the audible bell.
-endif
-
 if has("mouse")
     set mouse=a                   " Enable mouse everywhere.
     set mousemodel=popup_setpos   " Show a pop-up for right-click.
