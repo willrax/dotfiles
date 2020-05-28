@@ -75,12 +75,12 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 
 # Apps to Install
 
-- [Clean Shot X](getcleanshot.com/)
-- [1Password](1password.com)
-- [Alfred](alfredapp.com)
+- [Clean Shot X](https://getcleanshot.com/)
+- [1Password](https://1password.com)
+- [Alfred](https://alfredapp.com)
 - [Bartender](https://www.macbartender.com/)
 - [Chrome](https://www.google.com/chrome/)
 - [VS Code](https://code.visualstudio.com/)
-- [Slack](slack.com)
-- [Discord](discord.com)
-- [Tower](git-tower.com)
+- [Slack](https://slack.com)
+- [Discord](https://discord.com)
+- [Tower](https://git-tower.com)
