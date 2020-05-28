@@ -72,3 +72,15 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```shell
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 ```
+
+# Apps to Install
+
+- [Clean Shot X](getcleanshot.com/)
+- [1Password](1password.com)
+- [Alfred](alfredapp.com)
+- [Bartender](https://www.macbartender.com/)
+- [Chrome](https://www.google.com/chrome/)
+- [VS Code](https://code.visualstudio.com/)
+- [Slack](slack.com)
+- [Discord](discord.com)
+- [Tower](git-tower.com)
