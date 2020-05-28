@@ -79,7 +79,7 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 - [1Password](https://1password.com)
 - [Alfred](https://alfredapp.com)
 - [Bartender](https://www.macbartender.com/)
-- [Chrome](https://www.google.com/chrome/)
+- [Edge](https://www.microsoft.com/edge/)
 - [VS Code](https://code.visualstudio.com/)
 - [Slack](https://slack.com)
 - [Discord](https://discord.com)
