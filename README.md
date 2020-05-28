@@ -9,6 +9,16 @@ git clone git@github.com:willrax/dotfiles.git
 - Copy the `gitconfig.sample` into `gitconfig` and update the name, email, and paths.
 - Run `ruby launch.rb`
 
+## Homebrew
+
+Install Homebrew with this command:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+In the dotfiles folder run `brew bundle`.
+
 ## Prezto
 
 To install Prezto run:
