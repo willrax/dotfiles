@@ -1,0 +1,29 @@
+[alias]
+  s = "status -sb"
+  l = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative
+  gl = log --oneline --decorate --stat --graph
+  co = checkout
+  ru = remote update
+  c = "!git log --oneline | wc -l "
+[core]
+  legacyheaders = false
+  whitespace = trailing-space,space-before-tab
+  quotepath = false
+  autocrlf = false
+  safecrlf = true
+  editor = vim
+[color]
+  ui = auto
+[branch]
+  autosetupmerge = true
+[advice]
+  pushNonFastForward = false
+  statusHints = false
+[push]
+  default = tracking
+[rerere]
+  enabled = true
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f

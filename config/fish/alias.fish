@@ -1,0 +1,5 @@
+alias g="git"
+alias gclean="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias m="tmuxinator"
+alias t="tmux"
+alias a="tmux attach -t"
