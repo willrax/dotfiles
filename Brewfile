@@ -9,6 +9,7 @@ brew 'trash'
 brew 'wget'
 brew 'yt-dlp'
 brew 'zsh'
+brew 'tmux'
 
 cask 'appcleaner'
 cask '1password'
